@@ -1,9 +1,9 @@
-import Image from "next/image";
 import {UserButton} from "@clerk/nextjs";
 import {Button} from "@/components/ui/button";
 import {auth} from "@clerk/nextjs/server";
 import Link from "next/link";
 import {LogIn} from "lucide-react";
+import FileUpload from "@/components/FileUpload";
 
 export default async function Home() {
     // Checking if the user is signed in by calling the auth function to get the user ID
@@ -28,7 +28,7 @@ export default async function Home() {
                     instanly answer questions and understand research with AI
                 </p>
                 <div className=" w-full mt-4">
-                    {isAuth ? (<h1>fileupload</h1>):(
+                    {isAuth ? <FileUpload/>:(
                         <Link href="/sign-in">
                             <Button>
                                 Login to get Started !
